@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build:css": "yarn tailwind -i ./Styles/App.css -o ./wwwroot/css/site.css",
+    "build:css:watch": "yarn tailwind -i ./Styles/App.css -o ./wwwroot/css/site.css --watch"
   },
   "keywords": [],
   "author": "",
