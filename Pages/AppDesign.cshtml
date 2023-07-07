@@ -1,0 +1,25 @@
+﻿@page
+@model DESIGNOX.Pages.AppDesignModel
+@{
+    ViewData["Title"] = "Graphic Design";
+}
+
+
+<partial name="_Banner" model="Model.BannerInfo" />
+
+<div class="container cards space-y-8 mt-20 lg:flex lg:space-y-0 gap-4 flex-wrap  ">
+
+    @foreach (var showcase in Model.Showcases)
+    {
+        <partial name="_ProductShowcaseCard" model=showcase />
+    }
+</div>
+
+<div class="pb-32 pt-20">
+    <div class="container flex flex-col lg:flex-row gap-4">
+        @foreach (var link in Model.Links)
+        {
+            <partial name="_PageLink" model="link" />
+        }
+    </div>
+</div>
