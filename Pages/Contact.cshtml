@@ -1,0 +1,60 @@
+﻿@page
+@model DESIGNOX.Pages.ContactModel
+@{
+    ViewData["Title"] = "Contact";
+    var showErrorOnName = ViewData["showErrorOnName"] ?? false;
+    var showErrorOnEmail = ViewData["showErrorOnEmail"] ?? false;
+    var showErrorOnMessage = ViewData["showErrorOnMessage"] ?? false;
+}
+
+
+<div>
+    <div class="bg-peach text-white px-4 py-20 space-y-10 bg-[url(/images/contact/mobile/bg-pattern-hero-contact-mobile.svg)] lg:bg-[url(/images/contact/desktop/bg-pattern-hero-desktop.svg)] lg:bg-left-bottom bg-no-repeat bg-center md:bg-right md:px-4 md:container md:rounded-xl md:flex flex-col lg:items-center lg:flex-row ">
+        <div class="flex-1 text-center md:text-left">
+            <h3 class="capitalize text-3xl font-medium">contact us</h3>
+            <p>Ready to take it to the next level? Let’s talk about your project or idea and find out how we can help your business grow. If you are looking for unique digital experiences that’s relatable to your users, drop us a line.</p>
+        </div>
+
+        <div class="form w-full flex-1">
+            <form method="post" class="flex flex-col gap-6">
+                <div class="input-container">
+                    <input asp-for="ContactSubmission.Name" type="text" class="contact-input" placeholder="Name" />
+                    <div class="flex gap-2 items-center">
+                        <span asp-validation-for="ContactSubmission.Name" class="text-xs text-grey-light text-right w-32">
+                        </span>
+                        @if ((bool)showErrorOnName)
+                        {
+                            <span class=""><img src="~/images/contact/desktop/icon-error.svg" /></span>
+                        }
+                    </div>
+                </div>
+
+                <div class="input-container">
+                    <input asp-for="ContactSubmission.Email" type="email" class="contact-input" placeholder="Email" />
+                    <div class="flex gap-2 items-center">
+                        <span asp-validation-for="ContactSubmission.Email" class="text-xs text-grey-light text-right w-32">
+                        </span>
+                        @if ((bool)showErrorOnEmail)
+                        {
+                            <span class=""><img src="~/images/contact/desktop/icon-error.svg" /></span>
+                        }
+                    </div>
+                </div>
+
+                <div class="input-container">
+                    <input asp-for="ContactSubmission.Phone" type="tel" class="contact-input" placeholder="Phone" />
+                </div>
+
+                <div class="input-container">
+                    <textarea asp-for="ContactSubmission.Message" class="w-full bg-transparent focus:bg-transparent focus:outline-0 placeholder:text-white placeholder:opacity-50" placeholder="Your Message"></textarea>
+                    <span asp-validation-for="ContactSubmission.Message"></span>
+                </div>
+
+                <button type="submit" class="btn-primary self-center md:self-end">submit</button>
+            </form>
+        </div>
+
+    </div>
+</div>
+
+<partial name="_LocationIllustrations" />
