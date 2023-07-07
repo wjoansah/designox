@@ -1,0 +1,19 @@
+﻿@model DESIGNOX.Models.BannerInfo
+
+@{
+    string key = Model.Title.ToLower().Split(" ")[0];
+    string bgimg = $"{key}.svg";
+}
+
+@*
+<div class="md:bg-[url(/images/app-design/desktop/bg-pattern-intro-app.svg)]"></div>
+<div class="md:bg-[url(/images/web-design/desktop/bg-pattern-intro-web.svg)]"></div>
+<div class="md:bg-[url(/images/graphic-design/desktop/bg-pattern-intro-graphic.svg)]"></div>
+*@
+
+<div class="banner bg-peach text-white text-center px-4 py-20 bg-[url(/images/shared/desktop/bg-pattern-small-circle.svg)] bg-no-repeat bg-right md:bg-[url(/images/@key-design/desktop/bg-pattern-intro-@bgimg)] md:container md:rounded-xl">
+    <div class="container space-y-4">
+        <h3 class="text-4xl capitalize">@Model.Title</h3>
+        <p class="text-xs max-w-[50%] mx-auto">@Model.Description</p>
+    </div>
+</div>
