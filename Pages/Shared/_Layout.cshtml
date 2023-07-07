@@ -2,57 +2,121 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>@ViewData["Title"] - DESIGNOX</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-  <link rel="stylesheet" href="~/DESIGNOX.styles.css" asp-append-version="true" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - DESIGNO</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/DESIGNOX.styles.css" asp-append-version="true" />
 </head>
 
 <body>
-  <header>
-    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-      <div class="container">
-        <a class="navbar-brand text-5xl text-peach" asp-area="" asp-page="/Index">DESIGNOX</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse"
-          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-          <ul class="navbar-nav flex-grow-1">
-            <li class="nav-item">
-              <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-  </header>
-  <div class="container">
-    <main role="main" class="pb-3">
-      @RenderBody()
-    </main>
-  </div>
+    <header>
+        <nav class="flex items-center justify-between container py-6 lg:w-[80%]">
+            <div class="logo">
+                <a asp-page="/Index" asp-area="">
+                    <img class="h-[1.688rem] w-[12.625rem]" src="~/images/shared/desktop/logo-dark.png" alt="Designo Logo" />
+                </a>
+            </div>
+            <div class="primary-menu hidden md:block ">
+                <ul class="flex items-center gap-[4vw]">
+                    <li>
+                        <a asp-page="/About" class="nav-link">our company</a>
+                    </li>
 
-  <footer class="border-top footer text-muted">
-    <div class="container">
-      &copy; 2023 - DESIGNOX - <a asp-area="" asp-page="/Privacy">Privacy</a>
+                    <li>
+                        <a asp-page="/Locations" class="nav-link">locations</a>
+                    </li>
+
+                    <li>
+                        <a asp-page="/Contact" class="nav-link">contact</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div id="nav-menu" class="nav-menu hidden absolute bg-black h-screen left-0 top-[10%] w-full bg-black/25 md:hidden">
+                <ul class="flex flex-col gap-[4vw] bg-black px-4 py-10">
+                    <li>
+                        <a asp-page="/About" class="nav-link text-white">our company</a>
+                    </li>
+
+                    <li>
+                        <a asp-page="/Locations" class="nav-link text-white">locations</a>
+                    </li>
+
+                    <li>
+                        <a asp-page="/Contact" class="nav-link text-white">contact</a>
+                    </li>
+                </ul>
+
+            </div>
+            <div class="nav-toggle md:hidden">
+                <button id="nav-toggle" type="button">
+                    <img id="menu-icon" src="~/images/shared/mobile/icon-hamburger.svg" alt="Menu icon" />
+                </button>
+            </div>
+        </nav>
+    </header>
+    <div>
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
     </div>
-  </footer>
 
-  <script src="~/lib/jquery/dist/jquery.min.js"></script>
-  <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="~/js/site.js" asp-append-version="true"></script>
+    <footer class="footer relative w-full bg-black text-white space-y-4 text-center py-8 mt-32">
+        @if ((string)ViewData["Title"] != "Contact")
+        {
+            <div class="container absolute top-[-40%] left-[5%] md:left-[5%] lg:left-[5%] xl:left-[9%] 2xl:left-[21%] 3xl:left-[30%] mx-auto md:px-12 md:flex md:text-left justify-between text-center space-y-4 bg-peach bg-no-repeat rounded-lg bg-[url(/images/shared/desktop/bg-pattern-call-to-action.svg)] bg-right px-4 py-12">
+                <div class="flex flex-col gap-2">
+                    <h3 class="text-3xl">Let’s talk about your project</h3>
+                    <p class="text-sm max-w-lg mx-auto opacity-50">Ready to take it to the next level? Contact us today and find out how our expertise can help your business grow.</p>
+                </div>
+                <button class="btn-primary" type="button"><a asp-page="/Contact">get in touch</a></button>
+            </div>
+        }
+        <div class="container pt-20 space-y-6 md:pt-24">
+            <div class="footer-start flex flex-col gap-4 items-center md:flex-row justify-between">
+                <a asp-page="/Index" asp-area="">
+                    <img class="h-[1.688rem] w-[12.625rem]" src="~/images/shared/desktop/logo-light.png" alt="Designo" />
+                </a>
+                <div class="h-[0.5px] w-full bg-grey-light md:hidden"></div>
+                <div class="footer-links uppercase text-center flex flex-col items-center opacity-90 md:flex-row gap-4">
+                    <a asp-page="/About" class="footer-link">our company</a>
+                    <a asp-page="/Locations" class="footer-link">locations</a>
+                    <a asp-page="/Contact" class="footer-link">contact</a>
+                </div>
+            </div>
+            <div class="hidden h-[0.5px] w-full bg-grey-light md:block"></div>
 
-  @await RenderSectionAsync("Scripts", required: false)
+
+            <div class="footer-end text-center flex flex-col gap-6 md:flex-row justify-between">
+                <div class="opacity-50 md:text-left">
+                    <p class="font-medium">Designo Central Office</p>
+                    <p>3886 Wellington Street</p>
+                    <p>Toronto, Ontario M9C 3J5</p>
+                </div>
+
+                <div class="opacity-50 md:text-left">
+                    <p class="font-medium">Contact Us (Central Office)</p>
+                    <p>P : +1 253-863-8967</p>
+                    <p>M : contact@designo.co</p>
+                </div>
+
+                <div class="socials flex justify-center items-center gap-4 md:self-end">
+                    <img src="~/images/shared/desktop/icon-facebook.svg" alt="" class="facebook hover:cursor-pointer">
+                    <img src="~/images/shared/desktop/icon-youtube.svg" alt="" class="youtube hover:cursor-pointer">
+                    <img src="~/images/shared/desktop/icon-twitter.svg" alt="" class="twitter hover:cursor-pointer">
+                    <img src="~/images/shared/desktop/icon-pinterest.svg" alt="" class="pinterest hover:cursor-pointer">
+                    <img src="~/images/shared/desktop/icon-instagram.svg" alt="" class="instagram hover:cursor-pointer">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
 </body>
-
-</html>
-
-</html>
