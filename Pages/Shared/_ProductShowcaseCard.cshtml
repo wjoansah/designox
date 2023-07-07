@@ -1,0 +1,11 @@
+﻿@model DESIGNOX.Models.ProductShowcase
+
+<div class="card group overflow-clip lg:max-w-[350px] rounded-2xl text-center md:flex lg:flex-col cursor-pointer">
+    <div class="flex-1">
+        <img class="w-full" src=@Model.ImgPath alt=@Model.Name />
+    </div>
+    <div class="bg-peach-lighter px-4 py-8 space-y-4 flex-1 transition-colors group-hover:bg-peach group-hover:text-white  md:flex flex-col justify-center md:space-y-0 gap-2">
+        <h3 class="text-peach uppercase tracking-[.25rem] group-hover:text-white">@Model.Name</h3>
+        <p class="max-w-[80%] mx-auto">@Model.Description</p>
+    </div>
+</div>
