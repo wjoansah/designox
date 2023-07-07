@@ -1,0 +1,37 @@
+﻿[
+  {
+    "Name": "Express",
+    "Description": "A multi-carrier shipping website for ecommerce businesses",
+    "ImgPath": "/images/web-design/desktop/image-express.jpg"
+  },
+
+  {
+    "Name": "Transfer",
+    "Description": "Site for low-cost money transfers and sending money within seconds",
+    "ImgPath": "/images/web-design/desktop/image-transfer.jpg"
+  },
+
+  {
+    "Name": "Photon",
+    "Description": "A state-of-the-art music player with high-resolution audio and DSP effects",
+    "ImgPath": "/images/web-design/desktop/image-photon.jpg"
+  },
+
+  {
+    "Name": "Builder",
+    "Description": "Connects users with local contractors based on their location",
+    "ImgPath": "/images/web-design/desktop/image-builder.jpg"
+  },
+
+  {
+    "Name": "Blogr",
+    "Description": "Blogr is a platform for creating an online blog or publication",
+    "ImgPath": "/images/web-design/desktop/image-blogr.jpg"
+  },
+
+  {
+    "Name": "camp",
+    "Description": "Get expert training in coding, data, design, and digital marketing",
+    "ImgPath": "/images/web-design/desktop/image-camp.jpg"
+  }
+]

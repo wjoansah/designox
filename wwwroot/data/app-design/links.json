@@ -1,0 +1,13 @@
+[
+  {
+    "Title": "Web Design",
+    "Url": "/WebDesign",
+    "Slug": "web-design"
+  },
+
+  {
+    "Title": "Graphic Design",
+    "Url": "/GraphicDesign",
+    "Slug": "graphic-design"
+  }
+]
