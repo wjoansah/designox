@@ -1,0 +1,45 @@
+﻿@page
+@model DESIGNOX.Pages.AboutModel
+@{
+    ViewData["Title"] = "About";
+}
+
+
+<div class="bg-white overflow-clip md:container md:rounded-3xl md:mb-20 lg:flex flex-row-reverse">
+    <img class="w-full grow-1 bg-no-repeat" src="~/images/about/desktop/image-about-hero.jpg" alt="" />
+    <div class="w-full p-5 bg-peach text-white text-center px-4 lg:px-12 py-12 bg-no-repeat bg-right-top bg-[url(/images/about/mobile/bg-pattern-hero-about-mobile.svg)] lg:bg-[url(/images/about/desktop/bg-pattern-hero-about-desktop.svg)] grow-[2] lg:flex flex-col lg:justify-center lg:text-left">
+        <h5 class="mb-4 text-3xl capitalize font-bold tracking-tight lg:text-4xl lg:tracking-normal">about us</h5>
+        <p class="mb-3 font-normal text-gray-700 lg:max-w-[460px]">Founded in 2010, we are a creative agency that produces lasting results for our clients. We’ve partnered with many startups, corporations, and nonprofits alike to craft designs that make real impact. We’re always looking forward to creating brands, products, and digital experiences that connect with our clients’ audiences.</p>
+    </div>
+</div>
+
+<div class="w-full overflow-clip md:container md:rounded-3xl lg:flex">
+    <div class="w-full grow-1">
+        <img class="w-full object-cover" src="~/images/about/desktop/image-world-class-talent.jpg" />
+    </div>
+
+    <div class="px-4 py-16 bg-[url(/images/shared/desktop/bg-pattern-three-circles.svg)] bg-peach-lighter text-center lg:px-12 lg:max-w-lg flex flex-col justify-center gap-4 lg:text-left grow-2">
+        <h3 class="text-peach text-3xl">World-class talent</h3>
+        <p>We are a crew of strategists, problem-solvers, and technologists. Every design is thoughtfully crafted from concept to launch, ensuring success in its given market. We are constantly updating our skills in a myriad of platforms. </p>
+        <p>Our team is multi-disciplinary and we are not merely interested in form — content and meaning are just as important. We give great importance to craftsmanship, service, and prompt delivery. Clients have always been impressed with our high-quality outcomes that encapsulates their brand’s story and mission.</p>
+    </div>
+</div>
+
+<partial name="_LocationIllustrations"/>
+
+<div class="w-full mb-36 overflow-clip md:container md:rounded-3xl lg:flex flex-row-reverse">
+    <div class="w-full grow-1">
+        <img class="w-full object-cover" src="~/images/about/desktop/image-real-deal.jpg" />
+    </div>
+
+    <div class="px-4 py-16 bg-[url(/images/shared/desktop/bg-pattern-three-circles.svg)] bg-peach-lighter text-center lg:px-12 lg:max-w-lg flex flex-col justify-center gap-4 lg:text-left grow-2">
+        <h3 class="text-peach text-3xl">The real deal</h3>
+            <p>
+                As strategic partners in our clients’ businesses, we are ready to take on any challenge as our own.
+                Solving real problems require empathy and collaboration, and we strive to bring a fresh perspective to every opportunity. We make design and technology more accessible and give you tools to measure success.
+            </p>
+            <p>
+                We are visual storytellers in appealing and captivating ways. By combining business and marketing strategies, we inspire audiences to take action and drive real results.
+            </p>
+    </div>
+</div>
