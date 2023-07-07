@@ -1,10 +1,68 @@
 ﻿@page
+@using DESIGNOX.Models;
 @model IndexModel
 @{
     ViewData["Title"] = "Home page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="bg-peach text-center text-white bg-[url(/images/home/desktop/bg-pattern-hero-home.svg)] bg-no-repeat bg-right md:container md:rounded-xl">
+    @*// hero section*@
+    <div class="container rounded-lg md:flex flex-col items-center ">
+        <div class="hero py-12 lg:flex flex-row lg:text-left">
+            <div class="hero-text pt-6 space-y-4 md:space-y-8 lg:space-y-0 lg:flex flex-col items-center justify-center gap-4">
+                <h3 class="text-4xl md:max-w-[70%] mx-auto lg:max-w-full">Award-winning custom designs and digital branding solutions</h3>
+                <p class="text-sm md:max-w-[60%] mx-auto lg:max-w-full">With over 10 years in the industry, we are experienced in creating fully responsive websites, app design, and engaging brand experiences. Find out more about our services.</p>
+                <button class="btn-primary self-start" type="button"><a asp-page="/Contact">learn more</a></button>
+            </div>
+            <div class="hero-img">
+                <img class="w-full object-cover" src="~/images/home/desktop/image-hero-phone.png" alt="phone" />
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="container my-32 flex flex-col lg:flex-row gap-4 justify-between ">
+    <div class="flex-1">
+        <partial name="_PageLink" model="Model.Links.FirstOrDefault()" />
+    </div>
+
+    <div class="flex flex-col flex-1 gap-4">
+        @foreach (var link in Model.Links.Skip(1))
+        {
+            <partial name="_PageLink" model="link" />
+        }
+    </div>
+</div>
+
+<div class="container space-y-20 mt-20 pb-32 lg:space-y-0 lg:flex gap-4 ">
+    <div class="flex flex-col gap-4 items-center text-center md:flex-row lg:flex-col">
+        <div class="flex flex-col items-center bg-center bg-contain bg-no-repeat bg-[url(/images/shared/desktop/bg-pattern-small-circle.svg)] w-full">
+            <img class="" src="~/images/home/desktop/illustration-passionate.svg" />
+        </div>
+        <div class="md:text-left gap-4 lg:text-center">
+            <h3 class="text-2xl uppercase font-medium tracking-widest">Passionate</h3>
+            <p class="text-normal">Each project starts with an in-depth brand research to ensure we only create products that serve a purpose. We merge art, design, and technology into exciting new solutions.</p>
+        </div>
+    </div>
+
+    <div class="flex flex-col gap-4 items-center text-center md:flex-row lg:flex-col">
+        <div class="flex flex-col items-center bg-center bg-contain bg-no-repeat bg-[url(/images/shared/desktop/bg-pattern-small-circle.svg)] w-full">
+            <img class="" src="~/images/home/desktop/illustration-resourceful.svg" />
+        </div>
+        <div class="md:text-left gap-4 lg:text-center">
+            <h3 class="text-2xl uppercase font-medium tracking-widest">Resourceful</h3>
+            <p class="text-normal">Everything that we do has a strategic purpose. We use an agile approach in all of our projects and value customer collaboration. It guarantees superior results that fulfill our clients’ needs.</p>
+        </div>
+    </div>
+
+    <div class="flex flex-col gap-4 items-center text-center md:flex-row lg:flex-col">
+        <div class="flex flex-col items-center bg-center bg-contain bg-no-repeat bg-[url(/images/shared/desktop/bg-pattern-small-circle.svg)] w-full">
+            <img class="" src="~/images/home/desktop/illustration-friendly.svg" />
+        </div>
+        <div class="md:text-left gap-4 lg:text-center">
+            <h3 class="text-2xl uppercase font-medium tracking-widest">Friendly</h3>
+            <p class="text-normal">We are a group of enthusiastic folks who know how to put people first. Our success depends on our customers, and we strive to give them the best experience a company can provide.</p>
+        </div>
+    </div>
 </div>
