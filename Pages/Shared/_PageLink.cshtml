@@ -1,0 +1,23 @@
+﻿@model DESIGNOX.Models.PageLink
+
+@{
+    string imgpath = $"{Model.Slug}.jpg";
+}
+
+@*
+<div class="bg-[url('/images/home/mobile/image-web-design.jpg')]  md:bg-[url('/images/home/tablet/image-web-design.jpg')] lg:bg-[url('/images/home/desktop/image-web-design.jpg')]"></div>
+
+<div class="bg-[url('/images/home/mobile/image-app-design.jpg')]  md:bg-[url('/images/home/tablet/image-app-design.jpg')] lg:bg-[url('/images/home/desktop/image-app-design.jpg')]"></div>
+
+<div class="bg-[url('/images/home/mobile/image-graphic-design.jpg')]  md:bg-[url('/images/home/tablet/image-graphic-design.jpg')] lg:bg-[url('/images/home/desktop/image-graphic-design.jpg')]"></div>
+*@
+
+<a class="block overflow-hidden w-full h-full rounded-lg bg-[url('/images/home/mobile/image-@imgpath')]  md:bg-[url('/images/home/tablet/image-@imgpath')] lg:bg-[url('/images/home/desktop/image-@imgpath')]   bg-no-repeat  bg-cover bg-center object-contain" asp-page="@Model.Url">
+    <div class="w-full h-full bg-black/50 hover:bg-peach/70 flex flex-col gap-2 justify-center items-center py-[6rem] text-center uppercase">
+        <h2 class="text-2xl text-white">@Model.Title</h2>
+        <div class="flex items-center justify-center gap-2 ">
+            <p class="text-white text-sm">view projects</p>
+            <span class=""><img src="~/images/shared/desktop/icon-right-arrow.svg" /></span>
+        </div>
+    </div>
+</a>
